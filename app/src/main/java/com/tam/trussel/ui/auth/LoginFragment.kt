@@ -16,15 +16,6 @@ class LoginFragment : Fragment() {
     private lateinit var sessionManager: SessionManager
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
-    private val userList = listOf(
-        User("lian@gmail.com", "lian123"),
-        User("alka@gmail.com", "alka123"),
-        User("lutpi@gmail.com", "lutpi123"),
-        User("ilham@gmail.com", "ilham123"),
-        User("bintang@gmail.com", "bintang123"),
-        User("user1@gmail.com", "password123"),
-        User("user2@gmail.com", "password456")
-    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,14 +34,10 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Langsung navigasi jika sudah login
         if (sessionManager.isLoggedIn()) {
-            findNavController().navigate(R.id.action_loginFragment_to_navigation_home)
-            return  // Penting: return setelah navigate untuk menghindari eksekusi kode berikutnya
-        }
-
-        // Tampilkan daftar user di LogCat
-        userList.forEach { user ->
-            println("User: ${user.email} - ${user.password}")
+            navigateToHome()
+            return
         }
 
         binding.buttonLogin.setOnClickListener {
@@ -65,19 +52,39 @@ class LoginFragment : Fragment() {
     private fun validateUser() {
         val email = binding.editTextEmail.text.toString().trim()
         val password = binding.editTextPassword.text.toString().trim()
-        val user = User(email, password)
 
-        if (user.isValid()) {
-            if (userList.any { it.email == email && it.password == password }) {
-                sessionManager.saveLoginSession(user)
-                Toast.makeText(requireContext(), "Login sukses!", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_loginFragment_to_navigation_home)
-            } else {
-                Toast.makeText(requireContext(), "User/password salah", Toast.LENGTH_SHORT).show()
-            }
-        } else {
-            Toast.makeText(requireContext(), "Format email/password salah", Toast.LENGTH_SHORT).show()
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(requireContext(), "Email dan password harus diisi", Toast.LENGTH_SHORT).show()
+            return
         }
+
+        // 1. Cek di SharedPreferences (data registrasi)
+        val registeredUser = sessionManager.getLoggedInUser()
+        if (registeredUser != null && registeredUser.email == email && registeredUser.password == password) {
+            sessionManager.saveLoginSession(registeredUser)
+            navigateToHome()
+            return
+        }
+
+        // 2. Cek di userList statis (jika masih ingin mempertahankan user dummy)
+        val dummyUsers = listOf(
+            User("lian@gmail.com", "lian123"),
+            User("alka@gmail.com", "alka123"),
+            // ... tambahkan user dummy lainnya jika diperlukan
+        )
+
+        if (dummyUsers.any { it.email == email && it.password == password }) {
+            sessionManager.saveLoginSession(User(email, password))
+            navigateToHome()
+            return
+        }
+
+        Toast.makeText(requireContext(), "Email atau password salah", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun navigateToHome() {
+        Toast.makeText(requireContext(), "Login berhasil!", Toast.LENGTH_SHORT).show()
+        findNavController().navigate(R.id.action_loginFragment_to_navigation_home)
     }
 
     override fun onDestroyView() {

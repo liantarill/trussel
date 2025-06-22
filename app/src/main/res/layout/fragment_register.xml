@@ -114,7 +114,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_border"
                         android:hint="Username"
-                        android:inputType="phone"
+                        android:inputType="textPersonName"
                         android:paddingVertical="14dp"
                         android:paddingStart="4dp" />
                 </com.google.android.material.textfield.TextInputLayout>

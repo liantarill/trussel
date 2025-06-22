@@ -11,7 +11,10 @@ package com.tam.trussel
 
 data class User(
     val email: String,
-    val password: String
+    val password: String,
+    val username: String = "",
+    val phone: String = "",
+    val isVerified: Boolean = false
 ) {
     // Validasi email dan password
     fun isValid(): Boolean {
