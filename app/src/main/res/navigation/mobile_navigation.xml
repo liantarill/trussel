@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
@@ -9,7 +9,18 @@
         android:id="@+id/navigation_home"
         android:name="com.tam.trussel.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_detail_product"
+            app:destination="@id/navigation_detail_product" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_detail_product"
+        android:name="com.tam.trussel.ui.product.ProductDetailFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_product_detail" >
+    </fragment>
+
 
     <fragment
         android:id="@+id/loginFragment"
