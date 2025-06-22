@@ -24,7 +24,20 @@
             app:destination="@id/registerFragment" />
 
     </fragment>
-
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.tam.trussel.ui.profile.ProfileFragment"
+        android:label="Profil"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_my_order"
+            app:destination="@id/navigation_my_order" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_my_order"
+        android:name="com.tam.trussel.ui.order.MyOrderFragment"
+        android:label="My Order"
+        tools:layout="@layout/fragment_my_order" />
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.tam.trussel.ui.auth.RegisterFragment"
