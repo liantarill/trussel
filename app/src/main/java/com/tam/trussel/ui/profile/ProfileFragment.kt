@@ -8,19 +8,25 @@ import android.view.ViewGroup
 import com.tam.trussel.R
 import androidx.navigation.fragment.findNavController
 import com.tam.trussel.databinding.FragmentProfileBinding
+import com.tam.trussel.ui.auth.SessionManager
 
 
 class ProfileFragment : Fragment() {
 
+    private lateinit var sessionManager: SessionManager
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sessionManager = SessionManager(requireContext())
+    }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -28,11 +34,16 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonMyOrder.setOnClickListener {
-            // Di sini bisa juga kamu tambahkan validasi email/password
-            findNavController().navigate(R.id.action_navigation_profile_to_navigation_my_order)
-        }
+        binding.buttonLogout.setOnClickListener {
+            sessionManager.logout()
+            requireActivity().finishAffinity()
 
+            // 2. Navigasi ke halaman login
+//            findNavController().navigate(R.id.loginFragment)
+//
+//            // 3. Beri feedback ke user
+//            Toast.makeText(requireContext(), "Logout berhasil", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroyView() {

@@ -13,6 +13,7 @@ import com.tam.trussel.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 
+    private lateinit var sessionManager: SessionManager
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
     private val userList = listOf(
@@ -22,9 +23,13 @@ class LoginFragment : Fragment() {
         User("ilham@gmail.com", "ilham123"),
         User("bintang@gmail.com", "bintang123"),
         User("user1@gmail.com", "password123"),
-        User("user2@gmail.com", "password456"),
-        User("", "")
+        User("user2@gmail.com", "password456")
     )
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sessionManager = SessionManager(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,6 +42,11 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if (sessionManager.isLoggedIn()) {
+            findNavController().navigate(R.id.action_loginFragment_to_navigation_home)
+            return  // Penting: return setelah navigate untuk menghindari eksekusi kode berikutnya
+        }
 
         // Tampilkan daftar user di LogCat
         userList.forEach { user ->
@@ -59,6 +69,7 @@ class LoginFragment : Fragment() {
 
         if (user.isValid()) {
             if (userList.any { it.email == email && it.password == password }) {
+                sessionManager.saveLoginSession(user)
                 Toast.makeText(requireContext(), "Login sukses!", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_loginFragment_to_navigation_home)
             } else {
