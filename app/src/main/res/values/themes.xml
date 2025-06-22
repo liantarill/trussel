@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Tam_project" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Trussel" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#3B82F6</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
