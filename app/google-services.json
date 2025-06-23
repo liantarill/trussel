@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "566671711840",
+    "project_id": "trussel-d439f",
+    "storage_bucket": "trussel-d439f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566671711840:android:7f1a8aea2eaf0c73232d05",
+        "android_client_info": {
+          "package_name": "com.tam.trussel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzd_91BxIoXglzOq_5whqS6-IoLuIKCwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

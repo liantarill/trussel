@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.tam.trussel.R
 import com.tam.trussel.User
 import com.tam.trussel.UserList
@@ -16,6 +18,8 @@ import com.tam.trussel.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
 
+    lateinit var database : FirebaseDatabase
+    lateinit var refrences : DatabaseReference
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
     private lateinit var sessionManager: SessionManager
@@ -111,6 +115,8 @@ class RegisterFragment : Fragment() {
         val confirmPassword = binding.editTextPasswordConfirmation.text.toString().trim()
         val agreedToTerms = binding.checkBoxTerms.isChecked
         val subscribeToNewsletter = binding.checkBoxNewsletter.isChecked
+        database = FirebaseDatabase.getInstance()
+        refrences = database.getReference("users")
 
         if (!validateInputs(username, email, phone, password, confirmPassword, agreedToTerms)) {
             return
@@ -123,6 +129,7 @@ class RegisterFragment : Fragment() {
             phone = phone
         )
 
+        refrences.child(username).setValue(user)
         sessionManager.saveLoginSession(user)
         UserList.addUser(user)
         Toast.makeText(requireContext(), "Registrasi berhasil!", Toast.LENGTH_SHORT).show()
