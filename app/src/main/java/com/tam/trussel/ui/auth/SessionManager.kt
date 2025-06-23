@@ -18,6 +18,7 @@ class SessionManager(private val context: Context) {
         editor.apply()
     }
 
+
     fun isLoggedIn(): Boolean {
         return sharedPref.getBoolean("is_logged_in", false)
     }

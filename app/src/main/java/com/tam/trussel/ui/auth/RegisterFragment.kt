@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.tam.trussel.R
 import com.tam.trussel.User
+import com.tam.trussel.UserList
 import com.tam.trussel.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
@@ -51,18 +52,22 @@ class RegisterFragment : Fragment() {
                 binding.progressBarPasswordStrength.progress = 0
                 "Kosong"
             }
+
             password.length < 6 -> {
                 binding.progressBarPasswordStrength.progress = 25
                 "Lemah"
             }
+
             password.length < 8 -> {
                 binding.progressBarPasswordStrength.progress = 50
                 "Sedang"
             }
+
             password.length < 10 -> {
                 binding.progressBarPasswordStrength.progress = 75
                 "Kuat"
             }
+
             else -> {
                 binding.progressBarPasswordStrength.progress = 100
                 "Sangat Kuat"
@@ -94,10 +99,7 @@ class RegisterFragment : Fragment() {
                 username = binding.editUsername.text.toString(),
                 phone = binding.editNoTelp.text.toString()
             )
-
-            sessionManager.saveLoginSession(user)
-            Toast.makeText(requireContext(), "Registrasi berhasil!", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+            registerUser()
         }
     }
 
@@ -113,7 +115,6 @@ class RegisterFragment : Fragment() {
         if (!validateInputs(username, email, phone, password, confirmPassword, agreedToTerms)) {
             return
         }
-
         // Create user instance
         val user = User(
             email = email,
@@ -122,13 +123,9 @@ class RegisterFragment : Fragment() {
             phone = phone
         )
 
-        // Save user data to SharedPreferences
         sessionManager.saveLoginSession(user)
-
-        // Show success message
+        UserList.addUser(user)
         Toast.makeText(requireContext(), "Registrasi berhasil!", Toast.LENGTH_SHORT).show()
-
-        // Navigate to login or home screen
         findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
     }
 
@@ -176,7 +173,11 @@ class RegisterFragment : Fragment() {
         }
 
         if (!agreedToTerms) {
-            Toast.makeText(requireContext(), "Anda harus menyetujui syarat dan ketentuan", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                "Anda harus menyetujui syarat dan ketentuan",
+                Toast.LENGTH_SHORT
+            ).show()
             return false
         }
 

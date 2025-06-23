@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.tam.trussel.R
 import com.tam.trussel.User
+import com.tam.trussel.UserList
 import com.tam.trussel.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -58,7 +59,6 @@ class LoginFragment : Fragment() {
             return
         }
 
-        // 1. Cek di SharedPreferences (data registrasi)
         val registeredUser = sessionManager.getLoggedInUser()
         if (registeredUser != null && registeredUser.email == email && registeredUser.password == password) {
             sessionManager.saveLoginSession(registeredUser)
@@ -66,14 +66,7 @@ class LoginFragment : Fragment() {
             return
         }
 
-        // 2. Cek di userList statis (jika masih ingin mempertahankan user dummy)
-        val dummyUsers = listOf(
-            User("lian@gmail.com", "lian123"),
-            User("alka@gmail.com", "alka123"),
-            // ... tambahkan user dummy lainnya jika diperlukan
-        )
-
-        if (dummyUsers.any { it.email == email && it.password == password }) {
+        if (UserList.findUser(email, password) != null) {
             sessionManager.saveLoginSession(User(email, password))
             navigateToHome()
             return
