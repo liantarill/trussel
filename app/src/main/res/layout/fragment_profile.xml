@@ -92,7 +92,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/logo" />
+                    android:src="@drawable/lian" />
             </androidx.cardview.widget.CardView>
 
             <TextView
