@@ -1113,7 +1113,9 @@
                                 android:layout_height="64dp"
                                 android:layout_marginEnd="12dp"
                                 android:background="@color/gray_100"
-                                android:scaleType="centerCrop" />
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/potter"
+                                android:clipToOutline="true"/>
 
                             <LinearLayout
                                 android:layout_width="0dp"
