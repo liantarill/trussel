@@ -116,7 +116,7 @@ class ProductDetailFragment : Fragment() {
         }
 
         binding.buttonChat.setOnClickListener {
-//            findNavController().navigate(R.id.action_navigation_detail_product_to_navigaton_chat_person)
+            findNavController().navigate(R.id.action_navigation_detail_product_to_navigaton_chat_person)
         }
 
         binding.buttonOffer.setOnClickListener {
