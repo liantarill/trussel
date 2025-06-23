@@ -49,6 +49,9 @@ class ProfileFragment : Fragment() {
             requireActivity().finishAffinity()
         }
 
+//        binding.buttonChat.setOnClickListener {
+//            findNavController().navigate(R.id.action_navigation_profile_to_navigation_chat)
+//        }
         binding.profilePict.setOnClickListener {
             // Print semua user yang terdaftar ke Logcat
             printRegisteredUsers()
