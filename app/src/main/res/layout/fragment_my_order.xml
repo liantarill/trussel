@@ -63,11 +63,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingTop="16dp">
 
-
-
-            <!-- Order Status Tabs -->
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -77,66 +74,85 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/tabAll"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/button_rounded"
+                        android:layout_marginEnd="12dp"
+                        android:backgroundTint="@color/blue_500"
+                        android:paddingVertical="12dp"
                         android:text="Semua"
-                        android:textColor="@android:color/white"
-                        android:textSize="12sp" />
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:cornerRadius="99dp" />
 
                     <Button
-                        android:id="@+id/tabUnpaid"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/button_rounded"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="12dp"
+                        android:backgroundTint="@color/gray_200"
+                        android:paddingVertical="12dp"
                         android:text="Belum Bayar"
-                        android:textColor="@color/gray_700"
-                        android:textSize="12sp" />
+                        android:textAllCaps="false"
+                        android:textColor="@color/gray_600"
+                        android:textStyle="bold"
+                        app:cornerRadius="99dp" />
 
                     <Button
-                        android:id="@+id/tabPacked"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/button_rounded"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="12dp"
+                        android:backgroundTint="@color/gray_200"
+                        android:paddingVertical="12dp"
+                        android:textAllCaps="false"
                         android:text="Dikemas"
-                        android:textColor="@color/gray_700"
-                        android:textSize="12sp" />
+                        android:textColor="@color/gray_600"
+                        android:textStyle="bold"
+                        app:cornerRadius="99dp" />
 
                     <Button
-                        android:id="@+id/tabShipped"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/button_rounded"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="12dp"
+                        android:backgroundTint="@color/gray_200"
+                        android:paddingVertical="12dp"
+                        android:textAllCaps="false"
                         android:text="Dikirim"
-                        android:textColor="@color/gray_700"
-                        android:textSize="12sp" />
+                        android:textColor="@color/gray_600"
+                        android:textStyle="bold"
+                        app:cornerRadius="99dp" />
 
                     <Button
-                        android:id="@+id/tabCompleted"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/button_rounded"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="12dp"
+                        android:backgroundTint="@color/gray_200"
+                        android:paddingVertical="12dp"
+                        android:textAllCaps="false"
                         android:text="Selesai"
-                        android:textColor="@color/gray_700"
-                        android:textSize="12sp" />
+                        android:textColor="@color/gray_600"
+                        android:textStyle="bold"
+                        app:cornerRadius="99dp" />
 
                     <Button
-                        android:id="@+id/tabCancelled"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_rounded"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="12dp"
+                        android:backgroundTint="@color/gray_200"
+                        android:paddingVertical="12dp"
+                        android:textAllCaps="false"
                         android:text="Dibatalkan"
-                        android:textColor="@color/gray_700"
-                        android:textSize="12sp" />
+                        android:textColor="@color/gray_600"
+                        android:textStyle="bold"
+                        app:cornerRadius="99dp" />
 
                 </LinearLayout>
 
@@ -144,6 +160,7 @@
 
             <!-- Orders List -->
             <LinearLayout
+                android:paddingHorizontal="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="100dp"
@@ -187,7 +204,7 @@
                                         android:layout_width="20dp"
                                         android:layout_height="20dp"
                                         android:layout_marginEnd="8dp"
-                                        android:src="@drawable/box_bw"
+                                        android:src="@drawable/bag"
                                         app:tint="@color/blue_500" />
 
                                     <TextView
@@ -234,11 +251,11 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/button_rounded"
+                                android:background="@drawable/bg_circle"
                                 android:padding="6dp"
                                 android:text="Sedang Dikemas"
                                 android:backgroundTint="@color/yellow_100"
-                                android:textColor="@color/yellow_500"
+                                android:textColor="@color/orange_800"
                                 android:textSize="10sp" />
 
                         </LinearLayout>
@@ -259,8 +276,11 @@
                                 android:layout_width="64dp"
                                 android:layout_height="64dp"
                                 android:layout_marginEnd="12dp"
-                                android:background="@color/gray_100"
-                                android:scaleType="centerCrop" />
+                                android:background="@drawable/button_rounded"
+                                android:backgroundTint="@color/gray_100"
+                                android:src="@drawable/iphone"
+                                android:scaleType="centerCrop"
+                                android:clipToOutline="true" />
 
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -272,7 +292,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="4dp"
-                                    android:text="Headphone Sony WH-1000XM4"
+                                    android:text="Iphone 12 Pro Max"
                                     android:textColor="@color/gray_800"
                                     android:textSize="14sp"
                                     android:textStyle="bold" />
@@ -295,7 +315,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:text="Rp 850.000"
+                                        android:text="Rp 8.500.000"
                                         android:textColor="@color/blue_600"
                                         android:textSize="14sp"
                                         android:textStyle="bold" />
@@ -303,7 +323,7 @@
                                     <Button
                                         android:layout_width="wrap_content"
                                         android:layout_height="32dp"
-                                        android:background="@drawable/button_rounded"
+                                        android:background="@drawable/bg_circle"
                                         android:minWidth="0dp"
                                         android:paddingHorizontal="12dp"
                                         android:text="Detail"
@@ -316,7 +336,6 @@
 
                         </LinearLayout>
 
-                        <!-- Seller Info -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -337,12 +356,15 @@
                                     android:layout_height="32dp"
                                     android:layout_marginEnd="8dp"
                                     android:background="@drawable/bg_circle"
-                                    android:src="@drawable/google" />
+                                    android:backgroundTint="@color/primary"
+                                    android:clipToOutline="true"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/bintang" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="ElektronikBekas"
+                                    android:text="Bintang"
                                     android:textColor="@color/gray_800"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
@@ -352,7 +374,7 @@
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="32dp"
-                                android:background="@drawable/button_rounded"
+                                android:background="@drawable/bg_circle"
                                 android:minWidth="0dp"
                                 android:paddingHorizontal="12dp"
                                 android:text="Chat Penjual"
@@ -361,7 +383,6 @@
 
                         </LinearLayout>
 
-                        <!-- Progress Tracking -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -394,14 +415,12 @@
 
                             </LinearLayout>
 
-                            <!-- Progress Steps -->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <!-- Step 1: Completed -->
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -415,7 +434,8 @@
                                         android:layout_marginBottom="8dp"
                                         android:background="@drawable/bg_circle"
                                         android:backgroundTint="@color/green_500"
-                                        android:src="@drawable/check"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
                                         app:tint="@android:color/white" />
 
                                     <TextView
@@ -428,7 +448,6 @@
 
                                 </LinearLayout>
 
-                                <!-- Step 2: Completed -->
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -442,7 +461,8 @@
                                         android:layout_marginBottom="8dp"
                                         android:background="@drawable/bg_circle"
                                         android:backgroundTint="@color/green_500"
-                                        android:src="@drawable/check"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
                                         app:tint="@android:color/white" />
 
                                     <TextView
@@ -455,7 +475,6 @@
 
                                 </LinearLayout>
 
-                                <!-- Step 3: Current -->
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -469,7 +488,8 @@
                                         android:layout_marginBottom="8dp"
                                         android:background="@drawable/bg_circle"
                                         android:backgroundTint="@color/yellow_500"
-                                        android:src="@drawable/check"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
                                         app:tint="@android:color/white" />
 
                                     <TextView
@@ -482,7 +502,6 @@
 
                                 </LinearLayout>
 
-                                <!-- Step 4: Pending -->
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -496,7 +515,8 @@
                                         android:layout_marginBottom="8dp"
                                         android:background="@drawable/bg_circle"
                                         android:backgroundTint="@color/gray_300"
-                                        android:src="@drawable/check"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
                                         app:tint="@android:color/white" />
 
                                     <TextView
@@ -509,7 +529,6 @@
 
                                 </LinearLayout>
 
-                                <!-- Step 5: Pending -->
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -523,7 +542,8 @@
                                         android:layout_marginBottom="8dp"
                                         android:background="@drawable/bg_circle"
                                         android:backgroundTint="@color/gray_300"
-                                        android:src="@drawable/check"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
                                         app:tint="@android:color/white" />
 
                                     <TextView
@@ -535,13 +555,9 @@
                                         android:textSize="10sp" />
 
                                 </LinearLayout>
-
                             </LinearLayout>
-
                         </LinearLayout>
-
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
 
                 <!-- Order 2: Sedang Dikirim -->
@@ -582,7 +598,7 @@
                                         android:layout_width="20dp"
                                         android:layout_height="20dp"
                                         android:layout_marginEnd="8dp"
-                                        android:src="@drawable/check"
+                                        android:src="@drawable/bag"
                                         app:tint="@color/blue_500" />
 
                                     <TextView
@@ -632,8 +648,10 @@
                                 android:background="@drawable/bg_circle"
                                 android:padding="6dp"
                                 android:text="Sedang Dikirim"
-                                android:textColor="@color/blue_600"
+                                android:backgroundTint="@color/blue_100"
+                                android:textColor="@color/blue_500"
                                 android:textSize="10sp" />
+
 
                         </LinearLayout>
 
@@ -642,7 +660,6 @@
                             android:layout_height="1dp"
                             android:background="@color/gray_100" />
 
-                        <!-- Product Info -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -653,8 +670,12 @@
                                 android:layout_width="64dp"
                                 android:layout_height="64dp"
                                 android:layout_marginEnd="12dp"
-                                android:background="@color/gray_100"
-                                android:scaleType="centerCrop" />
+                                android:background="@drawable/button_rounded"
+                                android:backgroundTint="@color/gray_100"
+                                android:src="@drawable/p6000"
+                                android:scaleType="centerCrop"
+                                android:clipToOutline="true" />
+
 
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -666,7 +687,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="4dp"
-                                    android:text="Sepatu Nike Air Max"
+                                    android:text="Nike P-6000"
                                     android:textColor="@color/gray_800"
                                     android:textSize="14sp"
                                     android:textStyle="bold" />
@@ -689,7 +710,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:text="Rp 250.000"
+                                        android:text="Rp 750.000"
                                         android:textColor="@color/blue_600"
                                         android:textSize="14sp"
                                         android:textStyle="bold" />
@@ -697,7 +718,7 @@
                                     <Button
                                         android:layout_width="wrap_content"
                                         android:layout_height="32dp"
-                                        android:background="@drawable/button_rounded"
+                                        android:background="@drawable/bg_circle"
                                         android:minWidth="0dp"
                                         android:paddingHorizontal="12dp"
                                         android:text="Detail"
@@ -707,7 +728,226 @@
                                 </LinearLayout>
 
                             </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="16dp"
+                            android:paddingBottom="16dp">
 
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:background="@drawable/bg_circle"
+                                    android:backgroundTint="@color/primary"
+                                    android:clipToOutline="true"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/bintang" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bintang"
+                                    android:textColor="@color/gray_800"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:background="@drawable/bg_circle"
+                                android:minWidth="0dp"
+                                android:paddingHorizontal="12dp"
+                                android:text="Chat Penjual"
+                                android:textColor="@color/white"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/gray_50"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Status Pengiriman"
+                                    android:textColor="@color/gray_800"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Lacak"
+                                    android:textColor="@color/blue_500"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:background="@drawable/bg_circle"
+                                        android:backgroundTint="@color/green_500"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
+                                        app:tint="@android:color/white" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Pesanan\nDibuat"
+                                        android:textColor="@color/gray_500"
+                                        android:textSize="10sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:background="@drawable/bg_circle"
+                                        android:backgroundTint="@color/green_500"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
+                                        app:tint="@android:color/white" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Pembayaran\nBerhasil"
+                                        android:textColor="@color/gray_500"
+                                        android:textSize="10sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:background="@drawable/bg_circle"
+                                        android:backgroundTint="@color/green_500"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
+                                        app:tint="@android:color/white" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Sedang\nDikemas"
+                                        android:textColor="@color/gray_500"
+                                        android:textSize="10sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:background="@drawable/bg_circle"
+                                        android:backgroundTint="@color/yellow_500"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
+                                        app:tint="@android:color/white" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Sedang\nDikirim"
+                                        android:textColor="@color/gray_500"
+                                        android:textSize="10sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:background="@drawable/bg_circle"
+                                        android:backgroundTint="@color/gray_300"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
+                                        app:tint="@android:color/white" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Pesanan\nSelesai"
+                                        android:textColor="@color/gray_500"
+                                        android:textSize="10sp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
                         </LinearLayout>
 
                         <!-- Tracking Info -->
@@ -801,7 +1041,7 @@
                                         android:layout_width="20dp"
                                         android:layout_height="20dp"
                                         android:layout_marginEnd="8dp"
-                                        android:src="@drawable/check"
+                                        android:src="@drawable/bag"
                                         app:tint="@color/blue_500" />
 
                                     <TextView
@@ -848,9 +1088,10 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/button_rounded"
+                                android:background="@drawable/bg_circle"
                                 android:padding="6dp"
                                 android:text="Selesai"
+                                android:backgroundTint="@color/green_100"
                                 android:textColor="@color/green_600"
                                 android:textSize="10sp" />
 
@@ -861,7 +1102,6 @@
                             android:layout_height="1dp"
                             android:background="@color/gray_100" />
 
-                        <!-- Product Info -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -922,7 +1162,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="32dp"
                                             android:layout_marginEnd="8dp"
-                                            android:background="@drawable/button_rounded"
+                                            android:background="@drawable/bg_circle"
                                             android:minWidth="0dp"
                                             android:paddingHorizontal="12dp"
                                             android:text="Beli Lagi"
@@ -932,7 +1172,7 @@
                                         <Button
                                             android:layout_width="wrap_content"
                                             android:layout_height="32dp"
-                                            android:background="@drawable/button_rounded"
+                                            android:background="@drawable/bg_circle"
                                             android:minWidth="0dp"
                                             android:paddingHorizontal="12dp"
                                             android:text="Ulasan"
@@ -946,7 +1186,226 @@
                             </LinearLayout>
 
                         </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="16dp"
+                            android:paddingBottom="16dp">
 
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:background="@drawable/bg_circle"
+                                    android:backgroundTint="@color/primary"
+                                    android:clipToOutline="true"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/bintang" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bintang"
+                                    android:textColor="@color/gray_800"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:background="@drawable/bg_circle"
+                                android:minWidth="0dp"
+                                android:paddingHorizontal="12dp"
+                                android:text="Chat Penjual"
+                                android:textColor="@color/white"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/gray_50"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Status Pengiriman"
+                                    android:textColor="@color/gray_800"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Lacak"
+                                    android:textColor="@color/blue_500"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:background="@drawable/bg_circle"
+                                        android:backgroundTint="@color/green_500"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
+                                        app:tint="@android:color/white" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Pesanan\nDibuat"
+                                        android:textColor="@color/gray_500"
+                                        android:textSize="10sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:background="@drawable/bg_circle"
+                                        android:backgroundTint="@color/green_500"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
+                                        app:tint="@android:color/white" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Pembayaran\nBerhasil"
+                                        android:textColor="@color/gray_500"
+                                        android:textSize="10sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:background="@drawable/bg_circle"
+                                        android:backgroundTint="@color/green_500"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
+                                        app:tint="@android:color/white" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Sedang\nDikemas"
+                                        android:textColor="@color/gray_500"
+                                        android:textSize="10sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:background="@drawable/bg_circle"
+                                        android:backgroundTint="@color/green_500"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
+                                        app:tint="@android:color/white" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Sedang\nDikirim"
+                                        android:textColor="@color/gray_500"
+                                        android:textSize="10sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:background="@drawable/bg_circle"
+                                        android:backgroundTint="@color/green_500"
+                                        android:padding="5dp"
+                                        android:src="@drawable/checklist"
+                                        app:tint="@android:color/white" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Pesanan\nSelesai"
+                                        android:textColor="@color/gray_500"
+                                        android:textSize="10sp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
                         <!-- Rating -->
                         <LinearLayout
                             android:layout_width="match_parent"

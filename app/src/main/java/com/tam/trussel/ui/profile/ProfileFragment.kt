@@ -54,6 +54,9 @@ class ProfileFragment : Fragment() {
             printRegisteredUsers()
             Toast.makeText(requireContext(), "Daftar user telah dicetak di Logcat", Toast.LENGTH_SHORT).show()
         }
+        binding.buttonMyOrder.setOnClickListener{
+            findNavController().navigate(R.id.action_navigation_profile_to_navigation_my_order)
+        }
     }
 
     private fun printRegisteredUsers() {

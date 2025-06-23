@@ -8,7 +8,6 @@
     <color name="white">#FFFFFFFF</color>
 
 
-
     <!-- Primary Colors -->
     <color name="primary">#667EEA</color>
     <color name="blue_500">#3B82F6</color>
@@ -44,6 +43,7 @@
     <color name="yellow_100">#FEF3C7</color>
     <color name="yellow_500">#EAB308</color>
     <color name="orange_500">#F59E0B</color>
+    <color name="orange_800">#A16207</color>
 
     <!-- Background Colors -->
     <color name="blue_100">#DBEAFE</color>
